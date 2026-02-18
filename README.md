@@ -1,16 +1,47 @@
-# MIT 16.485 - Visual Navigation for Autonomous Vehicles Labs
+# MIT 16.485 - Visual Navigation for Autonomous Vehicles 
 
-This repository contains the necessary source code for completing 16.485's labs.
-For more information about the course, please refer to the [OCW course website](https://ocw.mit.edu/courses/16-485-visual-navigation-for-autonomous-vehicles-vnav-fall-2020/).
+## Overview
+This repo contains my implementation to MIT's VNAV course labs. Linked [here](https://vnav.mit.edu/)
 
-The necessary simulator builds can be found on [this page](https://drive.google.com/drive/folders/1Bwu1lw9qx_TdibhPuYPpDLbJaBEBvBRb?usp=sharing).
+## Setup
+Clone the repo:
 
-ROS bags necessary for labs can be found [here](https://github.com/MIT-SPARK/VNAV-lab-data).
+```
+git clone https://github.com/griff-p/VNAV.git
+cd VNAV
+```
+Create a workspace and link:
+```
+mkdir -p ~/vnav_ws/src
+ln -s $(pwd)/lab2/two_drones_pkg ~/vnav_ws/src/
+cd ~/vnav_ws
+```
 
-Please post on the Github issues page if you encounter bugs and/or have questions.
+## Lab 2
+Lab 2 serves as an introduction to ROS and the tf package.
 
-# Licenses
-For licenses of the external packages, please refer to their specific repos.
+![Lab 2 Demo](lab2/lab2_world.gif)
 
-# Acknowledgements
-The development of this material was partially funded by the National Science Foundation under NSF CAREER award “Certifiable Perception for Autonomous Cyber-Physical Systems”.
+*Figure: Lab 2 simulation showing TF broadcasting and plot publisher in action. (world frame)*
+
+![Lab 2 Demo](lab2/lab2_av1.gif)
+
+*Figure: Lab 2 simulation in av1 reference frame. Drone 2's trajectory goes from parabolic to ellipse.*
+
+To run:
+Build:
+```
+colcon build 
+```
+Source:
+```
+source install/setup.bash
+```
+Run:
+```
+ros2 launch two_drones_pkg two_drones.launch.yaml
+```
+
+## Lab 3 - 9
+
+In progress.
